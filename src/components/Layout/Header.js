@@ -5,16 +5,15 @@ import styles from "./Header.module.css";
 
 const Header = () => {
   const { data: exchangeRate, isPending } = useFetch(
-    "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5"
+    "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json"
   );
 
   const currencyRate = exchangeRate
-    .filter((currency) => currency.ccy === "USD" || currency.ccy === "EUR")
+    .filter((currency) => currency.cc === "USD" || currency.cc === "EUR")
     .map((currency) => (
       <div>
-        <p>
-          {currency.ccy}/{currency.base_ccy}{" "}
-          <span>{Number(currency.sale).toFixed(2)}</span>
+        <p key={currency.cc}>
+          {currency.cc}/UAH <span>{currency.rate}</span>
         </p>
       </div>
     ));

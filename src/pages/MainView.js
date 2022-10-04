@@ -5,7 +5,7 @@ import Header from "../components/Layout/Header";
 const MainView = () => {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <main>
         <ConverterForm />
       </main>
