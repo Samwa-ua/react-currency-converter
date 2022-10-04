@@ -2,14 +2,16 @@ import React from "react";
 
 import styles from "./CurrencyRow.module.css";
 
-const CurrencyRow = () => {
+const CurrencyRow = ({ currencyOptions, selectedCurrency }) => {
   return (
     <div>
       <input type="number" className={styles.input} />
-      <select className={styles.select}>
-        <option value="UAH">UAH</option>
-        <option value="USD">USD</option>
-        <option value="EUR">EUR</option>
+      <select className={styles.select} value={selectedCurrency}>
+        {currencyOptions.map((option) => (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        ))}
       </select>
     </div>
   );
