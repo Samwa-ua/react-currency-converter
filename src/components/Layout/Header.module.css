@@ -1,0 +1,21 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5rem;
+    background-color: #3064F3;
+    color: #F4F6FE;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.header h2 {
+    padding-left: 3rem;
+}
+
+.header p {
+    padding: 0 3rem;
+}
