@@ -16,6 +16,7 @@ const CurrencyRow = ({
         className={styles.input}
         value={amount}
         onChange={onChangeAmount}
+        min="1"
       />
       <select
         className={styles.select}
