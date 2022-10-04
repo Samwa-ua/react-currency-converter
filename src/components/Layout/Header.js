@@ -3,15 +3,15 @@ import useFetch from "../../hooks/useFetch";
 
 import styles from "./Header.module.css";
 
-import { nbuUrl } from "../../constants/urls";
+import { NBU_URL } from "../../constants/urls";
 import { filterCurrency } from "../../helpers/filteredNbuCurrencyRate";
 
 const Header = () => {
-  const { data: exchangeRate, isPending } = useFetch(nbuUrl);
+  const { data: exchangeRate, isPending } = useFetch(NBU_URL);
 
   const currencyRate = filterCurrency(exchangeRate).map((currency) => (
-    <div>
-      <p key={currency.cc}>
+    <div key={currency.cc}>
+      <p>
         {currency.cc}/UAH <span>{currency.rate}</span>
       </p>
     </div>

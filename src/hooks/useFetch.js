@@ -5,13 +5,18 @@ const useFetch = (url) => {
   const [isPending, setIsPending] = useState(true);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetch(url);
-      const json = await data.json();
-      setData(json);
+    try {
+      const fetchData = async () => {
+        const data = await fetch(url);
+        const json = await data.json();
+        setData(json);
+      };
+      fetchData();
+    } catch (err) {
+      throw new Error("Data loading failed");
+    } finally {
       setIsPending(false);
-    };
-    fetchData().catch(console.error);
+    }
   }, [url]);
 
   return { data, isPending };

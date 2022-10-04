@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { BASE_URL } from "../../constants/urls";
 
 import styles from "./ConvertForm.module.css";
 
 import CurrencyRow from "./CurrencyRow";
-
-const BASE_URL = "https://api.exchangerate.host/latest";
 
 const ConverterForm = () => {
   const [currencyOptions, setSetCurrencyOptions] = useState([]);
